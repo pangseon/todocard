@@ -3,6 +3,7 @@ package com.example.todocard.entity;
 
 import com.example.todocard.dto.PostRequestDto;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -35,6 +36,11 @@ public class Post {
 
 
 
+    @Builder
+    public Post(String title,String content){
+        this.title=title;
+        this.content=content;
+    }
     public Post(PostRequestDto dto) {
         this.title = dto.getTitle();
         this.content = dto.getContent();

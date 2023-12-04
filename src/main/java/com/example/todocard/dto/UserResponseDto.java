@@ -1,9 +1,10 @@
 package com.example.todocard.dto;
 
 import com.example.todocard.entity.User;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+//
 @Getter
 @NoArgsConstructor
 public class UserResponseDto extends CommonResponseDto{
@@ -12,6 +13,7 @@ public class UserResponseDto extends CommonResponseDto{
     private String user_url;
 
 
+    @Builder
     public UserResponseDto(User user){
         this.age = user.getAge();
         this.user_info = user.getUser_info();
